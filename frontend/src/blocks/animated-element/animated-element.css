@@ -1,0 +1,8 @@
+.animated-element {
+  transition: opacity 0.4s ease-in-out;
+}
+
+.animated-element:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}

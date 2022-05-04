@@ -1,0 +1,10 @@
+.form__input_asgmt_auth {
+  border-bottom: 2px solid rgb(204, 204, 204);
+  background: transparent;
+  color: rgb(204, 204, 204);
+}
+
+.form__input_asgmt_auth::placeholder {
+  color: rgb(204, 204, 204);
+  opacity: 1;
+}

@@ -1,0 +1,10 @@
+.form__title_asgmt_auth {
+  text-align: center;
+  color: #fff;
+}
+
+@media screen and (max-width: 1024px) {
+  .form__title {
+    font-size: calc(20px + (24 - 20) * (100vw - 320px) / (1024 - 320));
+  }
+}

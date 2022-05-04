@@ -1,0 +1,9 @@
+.form__fieldset_type_handler_asgmt_auth {
+  margin: 216px 0 0;
+}
+
+@media screen and (max-width: 1024px) {
+  .form__fieldset_type_handler_asgmt_auth {
+    margin-top: calc(173px + (216 - 173) * (100vw - 320px) / (1024 - 320));
+  }
+}

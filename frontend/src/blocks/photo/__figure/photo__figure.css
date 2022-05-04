@@ -1,0 +1,10 @@
+.photo__figure {
+  max-width: min-content;
+  position: relative;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

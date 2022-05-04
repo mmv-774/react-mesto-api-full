@@ -1,0 +1,9 @@
+.form_asgmt_auth {
+  padding: 60px 0 0;
+}
+
+@media screen and (max-width: 1024px) {
+  .form_asgmt_auth {
+    padding-top: calc(40px + (60 - 40) * (100vw - 320px) / (1024 - 320));
+  }
+}

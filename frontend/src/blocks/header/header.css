@@ -1,0 +1,22 @@
+.header {
+  max-width: 880px;
+  padding: 45px 0 0;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgba(84, 84, 84, 0.7);
+  display: flex;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 1024px) {
+  .header {
+    max-width: calc(320px + (880 - 320) * (100vw - 320px) / (1024 - 320));
+    padding-top: calc(34px + (45 - 34) * (100vw - 320px) / (1024 - 320));
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    flex-direction: column-reverse;
+    gap: 40px;
+  }
+}

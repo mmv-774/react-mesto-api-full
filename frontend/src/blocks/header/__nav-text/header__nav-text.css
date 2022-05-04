@@ -1,0 +1,8 @@
+.header__nav-text {
+  margin: 0;
+  font-weight: 500;
+  max-width: 300px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}

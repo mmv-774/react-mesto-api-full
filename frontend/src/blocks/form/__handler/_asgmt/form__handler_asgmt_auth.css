@@ -1,0 +1,10 @@
+.form__handler_asgmt_auth {
+  background-color: #fff;
+  color: #000;
+}
+
+@media screen and (max-width: 1024px) {
+  .form__handler {
+    font-size: calc(16px + (18 - 16) * (100vw - 320px) / (1024 - 320));
+  }
+}
