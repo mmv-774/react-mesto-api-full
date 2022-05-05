@@ -31,19 +31,27 @@ function App() {
   const history = useHistory();
 
   useEffect(() => {
-    handleResponse(api.getUserInfo(), (res) => setCurrentUser(res));
-  }, []);
+    if (loggedIn) {
+      handleResponse(api.getUserInfo(), (res) => setCurrentUser(res));
+    } else {
+      setCurrentUser({});
+    }
+  }, [loggedIn]);
 
   useEffect(() => {
-    handleResponse(api.getCards(), (res) => setCards(res));
-  }, []);
+    if (loggedIn) {
+      handleResponse(api.getCards(), (res) => setCards(res.cards));
+    } else {
+      setCards([]);
+    }
+  }, [loggedIn]);
 
   useEffect(() => {
     const jwt = localStorage.getItem('jwt');
     if (jwt) {
       handleResponse(tokenCheck(jwt), (res) => {
         setLoggedIn(true);
-        setCurrentUserEmail(res.data.email);
+        setCurrentUserEmail(res.email);
       });
     }
   }, [history]);
@@ -94,7 +102,7 @@ function App() {
   }
 
   function handleCardLike(card) {
-    const isLiked = card.likes.some((i) => i._id === currentUser._id);
+    const isLiked = card.likes.some((i) => i === currentUser._id);
 
     handleResponse(api.setLike(card._id, isLiked), (res) => {
       setCards((state) => state.map((c) => (c._id === card._id ? res : c)));

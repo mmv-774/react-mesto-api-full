@@ -1,4 +1,4 @@
-export const BASE_URL = 'https://auth.nomoreparties.co';
+export const BASE_URL = 'http://api.mm.mesto.nomoredomains.work';
 
 function _sendAuthRequest(email, password, endpoint) {
   return fetch(`${BASE_URL}${endpoint}`, {
