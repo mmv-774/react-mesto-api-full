@@ -23,8 +23,8 @@ module.exports.getCards = (req, res, next) => {
     .then((cards) => {
       res.send({
         cards: cards.sort((a, b) => {
-          if (a.createdAt > b.createdAt) return 1;
-          if (a.createdAt < b.createdAt) return -1;
+          if (a.createdAt > b.createdAt) return -1;
+          if (a.createdAt < b.createdAt) return 1;
           return 0;
         }),
       });
