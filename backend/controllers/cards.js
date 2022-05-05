@@ -20,6 +20,7 @@ const cardQueryErrorHandler = (error, next, messages = {}) => {
 
 module.exports.getCards = (req, res, next) => {
   Card.find({})
+    .sort('-createdAt')
     .then((cards) => {
       res.send({ cards });
     })
