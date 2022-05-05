@@ -42,12 +42,7 @@ module.exports.login = (req, res, next) => {
         NODE_ENV === 'production' ? JWT_SECRET : 'some-dev-secret-key',
         { expiresIn: '7d' },
       );
-      res
-        .cookie('jwt', token, {
-          maxAge: 3600000 * 24 * 7,
-          httpOnly: true,
-        })
-        .send({ message: 'Успешная авторизация' });
+      return res.status(200).send({ token });
     })
     .catch((error) => userQueryErrorHandler(error, next));
 };

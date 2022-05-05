@@ -2,7 +2,6 @@ require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const cookieParser = require('cookie-parser');
 const { celebrate, errors } = require('celebrate');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const { notFoundErrorHandler, httpErrorHandler } = require('./middlewares/middlewares');
@@ -19,7 +18,6 @@ const app = express();
 mongoose.connect('mongodb://localhost:27017/mestodb');
 
 app.use(bodyParser.json());
-app.use(cookieParser());
 app.use(requestLogger);
 app.use(cors);
 app.post('/signin', celebrate(signInSchema), login);
